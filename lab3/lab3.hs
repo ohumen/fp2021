@@ -33,17 +33,19 @@ removeEveryNth n = concatMap (take (n-1)) . groups n
 
 -- a)
 
-isPrime :: Integral a => a -> Bool
-isPrime n = all check [2..n `div` 2]
-   where check x = n `mod` x /= 0
+prime :: Integer -> Integer -> [Integer]
+prime m n = [x | x <- list, x>=m, x<=n]
+ 
+list :: [Integer]
+list = 2 : [x | x <- [3..], right x]
+ 
+right :: Integer -> Bool
+right x = foldr (\p r -> p*p>x || (mod x p /= 0 && r)) True list
+
 
 -- б)
 
-is_prime :: Int -> Bool
-is_prime 1 = False
-is_prime 2 = True
-is_prime n | not (null ([x | x <- [2 .. n-1], mod n x == 0])) = False
-   | otherwise = True
+
 
 -- Висновок: Під час даної лабораторної роботи я набула досвiду визначення та використання функцiй вищого порядку
 -- за допомогою чого потім я застосувала вивчене на практиці.
