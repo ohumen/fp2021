@@ -35,7 +35,7 @@ removeEveryNth n = concatMap (take (n-1)) . groups n
 
 isPrime :: Integral a => a -> Bool
 isPrime n = all check [2..n `div` 2]
-            where check x = n `mod` x /= 0
+   where check x = n `mod` x /= 0
 
 -- б)
 
