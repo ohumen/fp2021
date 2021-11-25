@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-{-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
 -- Лабораторна робота №4
 -- студентки групи КН-32 підгрупи 1
 -- Гумен Ольга
